@@ -12,7 +12,7 @@ for (let i=1; i<=2; i++) {
             $('.lazyload').each((i, el) => {
                 const str = $(el).attr('data-src').replace('//th', '//w').replace('/small/', '/full/');
                 const strArr = str.split('/');
-                strArr[strArr.length - 1] = 'wallhaven-' + strArr[strArr.length - 1]
+                strArr[strArr.length - 1] = 'wallhaven-' + strArr.at(-1)
                 arr.push(strArr.join('/'));
             })
         },

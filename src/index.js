@@ -11,7 +11,7 @@ module.exports = ({
 	jpgMaybeNotJpg = false,
 }) => {
 	const suffixArr = ['.jpg', '.png']
-	axios.get(url).then(async (res) => {
+	axios.get(url, {responseType: 'arraybuffer'}).then(async (res) => {
 		const arr = [];
 
 		if (handleResCallback) {
@@ -54,5 +54,7 @@ module.exports = ({
                 })
             }
         }
+    }).catch(err => {
+        console.log('err::: ', err);
     })
 }
